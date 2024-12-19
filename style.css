@@ -842,3 +842,59 @@ body {
     top: -5px;
   }
 }
+
+.mouse-particle {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #1fa800;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkle 1s linear forwards;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.santa-container {
+  position: fixed;
+  top: 20%;
+  left: -200px;
+  animation: flyAcross 15s linear infinite;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.santa {
+  width: 200px;
+  height: auto;
+  margin-right: -30px;
+  z-index: 1;
+}
+
+@keyframes flyAcross {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(calc(25vw)) translateY(-30px);
+  }
+  50% {
+    transform: translateX(calc(50vw)) translateY(0);
+  }
+  75% {
+    transform: translateX(calc(75vw)) translateY(-30px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 400px)) translateY(0);
+  }
+}

@@ -185,6 +185,22 @@ function updateCountdown() {
 
 updateCountdown();
 
+// Thêm hiệu ứng di chuyển cho ông già Noel
+function moveSanta() {
+  const santaContainer = document.querySelector(".santa-container");
+
+  // Reset vị trí khi ông già Noel bay ra khỏi màn hình
+  setInterval(() => {
+    const rect = santaContainer.getBoundingClientRect();
+    if (rect.left > window.innerWidth) {
+      santaContainer.style.left = "-200px";
+    }
+  }, 100);
+}
+
+// Gọi hàm di chuyển ông già Noel
+moveSanta();
+
 // open/close box1
 document.getElementById("box1").addEventListener("click", function () {
   var box1 = document.getElementById("box1");
